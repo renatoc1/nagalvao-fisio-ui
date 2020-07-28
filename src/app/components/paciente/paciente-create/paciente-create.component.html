@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-content>
+        <mat-card-title>
+            Novo Paciente
+        </mat-card-title>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="Nome"
+                [(ngModel)]="paciente.nome" name="nome">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Idade"
+                [(ngModel)]="paciente.idade" name="idade">
+            </mat-form-field>
+        </form>
+        <button mat-raised-button (click)="createPaciente()" color="accent">
+            Salvar
+        </button>
+        <button mat-raised-button (click)="cancel()" color="accent">
+            Cancelar
+        </button>
+    </mat-card-content>
+</mat-card>
