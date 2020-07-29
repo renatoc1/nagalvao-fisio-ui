@@ -11,32 +11,31 @@ import { Endereco } from '../../../shared/models/endereco.model';
 })
 export class PacienteCreateComponent implements OnInit {
 
-  constructor(private router: Router, private pacienteService: PacienteService) { }
-
-  now = new Date();
-
   endereco: Endereco = {
-    descricao: 'Joaquim Monteiro Sobrinho',
-    numero: 32,
-    bairro: 'Vila Monteiro'
+    descricao: '',
+    numero: null,
+    bairro: ''
   }
 
   paciente: Paciente = {
-    nome: 'Renato',
-    idade: 25,
-    sexo: 'M',
-    profissao: 'Analista de Sistemas',
-    endereco: this.endereco,
-    telefone: '34998044538',
-    diagnosticoClinico: 'teste',
-    diagnosticoFisioterapeutico: 'teste',
-    dataAvaliacao: this.now
+    nome: '',
+    idade: null,
+    sexo: '',
+    profissao: '',
+    endereco: null,
+    telefone: '',
+    diagnosticoClinico: '',
+    diagnosticoFisioterapeutico: '',
+    dataAvaliacao: null
   }
+
+  constructor(private router: Router, private pacienteService: PacienteService) { }
 
   ngOnInit(): void {
   }
 
   createPaciente(): void {
+    this.paciente.endereco = this.endereco
     this.pacienteService.create(this.paciente).subscribe(() => {
       this.pacienteService.showMessage('Paciente criado com sucesso!')
       this.router.navigate(['/pacientes']);

@@ -10,12 +10,12 @@ import { ResponsePageable } from '../../shared/models/responsePageable.model';
 })
 export class PacienteService {
 
-  baseUrl = 'http://localhost:8080/'
+  baseUrl = 'http://localhost:8080/nagalvaofisio/paciente'
 
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyZW5hdG8iLCJyb2xlcyI6WyJBRE1JTiJdLCJpYXQiOjE1OTU4OTU5NjEsImV4cCI6MTU5NTg5OTU2MX0.eSAbkPg6O5lL0pPP4OGK_Gz79U-A-JaJ_eA7qmG39fU'
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyZW5hdG8iLCJyb2xlcyI6WyJBRE1JTiJdLCJpYXQiOjE1OTU5ODEwOTQsImV4cCI6MTU5NTk4NDY5NH0.fRbKXJ9pLOlY0bySVwaKqY81L6irJpYrQNlx0Qz4d-g'
     })
   }
 
@@ -34,7 +34,17 @@ export class PacienteService {
   }
 
   read(): Observable<ResponsePageable> {
-    return this.http.get<ResponsePageable>(this.baseUrl + 'nagalvaofisio/pacientes', this.httpOptions);
+    return this.http.get<ResponsePageable>(this.baseUrl, this.httpOptions);
+  }
+
+  readById(id: string): Observable<Paciente> {
+    const url = `${this.baseUrl}/${id}`
+    return this.http.get<Paciente>(url, this.httpOptions)
+  }
+
+  update(paciente: Paciente): Observable<Paciente> {
+    const url = `${this.baseUrl}/${paciente.idPaciente}`
+    return this.http.put<Paciente>(url, paciente, this.httpOptions)
   }
 
 }

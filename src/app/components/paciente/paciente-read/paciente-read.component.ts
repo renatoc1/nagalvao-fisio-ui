@@ -11,6 +11,7 @@ import { ResponsePageable } from '../../../shared/models/responsePageable.model'
 export class PacienteReadComponent implements OnInit {
 
   pacientes: Paciente[]
+  displayedColumns = ['id', 'nome', 'idade', 'sexo', 'telefone', 'dataAvaliacao', 'action']
 
   constructor(private pacienteService: PacienteService) { }
 

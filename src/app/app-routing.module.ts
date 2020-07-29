@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
 import { PacienteCrudComponent } from './views/paciente-crud/paciente-crud.component';
 import { PacienteCreateComponent } from './components/paciente/paciente-create/paciente-create.component';
+import { PacienteUpdateComponent } from './components/paciente/paciente-update/paciente-update.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: "pacientes/create",
     component: PacienteCreateComponent
+  },
+  {
+    path: "pacientes/update/:id",
+    component: PacienteUpdateComponent
   }
 ];
 
