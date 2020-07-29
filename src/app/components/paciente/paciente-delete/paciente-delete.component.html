@@ -1,24 +1,24 @@
 <mat-card>
     <mat-card-content>
         <mat-card-title>
-            Atualizar Paciente
+            Excluir Paciente
         </mat-card-title>
         <div class="container-fluid">
             <form>
                 <div class="row">
                     <div class="col-9">
                         <mat-form-field class="full-width">
-                            <input matInput placeholder="Nome" [(ngModel)]="paciente.nome" name="nome">
+                            <input matInput placeholder="Nome" [(ngModel)]="paciente.nome" name="nome" disabled>
                         </mat-form-field>
                     </div>
                     <div class="col-1">
                         <mat-form-field class="full-width">
-                            <input matInput placeholder="Idade" [(ngModel)]="paciente.idade" name="idade">
+                            <input matInput placeholder="Idade" [(ngModel)]="paciente.idade" name="idade" disabled>
                         </mat-form-field>
                     </div>
                     <div class="col-2">
                         <label>Sexo: </label>
-                        <mat-radio-group class="full-width" [(ngModel)]="paciente.sexo" name="sexo">
+                        <mat-radio-group class="full-width" [(ngModel)]="paciente.sexo" name="sexo" disabled>
                             <mat-radio-button value="masculino" checked>Masculino</mat-radio-button>
                             <mat-radio-button value="feminino">Feminino</mat-radio-button>
                         </mat-radio-group>
@@ -27,24 +27,24 @@
                 <div class="row">
                     <div class="col-6">
                         <mat-form-field class="full-width">
-                            <input matInput placeholder="Endereço" [(ngModel)]="endereco.descricao" name="descricao">
+                            <input matInput placeholder="Endereço" [(ngModel)]="endereco.descricao" name="descricao" disabled>
                         </mat-form-field>
                     </div>
                     <div class="col-1">
                         <mat-form-field class="full-width">
-                            <input matInput placeholder="Número" [(ngModel)]="endereco.numero" name="numero">
+                            <input matInput placeholder="Número" [(ngModel)]="endereco.numero" name="numero" disabled>
                         </mat-form-field>
                     </div>
                     <div class="col-5">
                         <mat-form-field class="full-width">
-                            <input matInput placeholder="Bairro" [(ngModel)]="endereco.bairro" name="bairro">
+                            <input matInput placeholder="Bairro" [(ngModel)]="endereco.bairro" name="bairro" disabled>
                         </mat-form-field>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <mat-form-field class="full-width">
-                            <input matInput placeholder="Profissão" [(ngModel)]="paciente.profissao" name="profissao">
+                            <input matInput placeholder="Profissão" [(ngModel)]="paciente.profissao" name="profissao" disabled>
                         </mat-form-field>
                     </div>
                     <div class="col">
@@ -52,14 +52,14 @@
                             <mat-label>Telefone</mat-label>
                             <span matPrefix>+55 &nbsp;</span>
                             <input type="tel" matInput placeholder="1599999-9999" [(ngModel)]="paciente.telefone"
-                                name="telefone">
+                                name="telefone" disabled>
                             <mat-icon matSuffix>phone</mat-icon>
                         </mat-form-field>
                     </div>
                     <div class="col-2">
                         <mat-form-field color="accent" appearance="fill">
                             <mat-label>Data de Avaliação</mat-label>
-                            <input matInput [matDatepicker]="picker2" [(ngModel)]="paciente.dataAvaliacao" name="dataAvaliacao">
+                            <input matInput [matDatepicker]="picker2" [(ngModel)]="paciente.dataAvaliacao" name="dataAvaliacao" disabled>
                             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                             <mat-datepicker #picker2 color="accent"></mat-datepicker>
                         </mat-form-field>
@@ -69,7 +69,7 @@
                     <div class="col-12">
                         <mat-form-field color="accent" appearance="fill" class="full-width">
                             <mat-label>Diagnóstico Clínico</mat-label>
-                            <textarea matInput [(ngModel)]="paciente.diagnosticoClinico" name="diagnosticoClinico"></textarea>
+                            <textarea matInput [(ngModel)]="paciente.diagnosticoClinico" name="diagnosticoClinico" disabled></textarea>
                         </mat-form-field>
                     </div>
                 </div>
@@ -77,14 +77,14 @@
                     <div class="col-12">
                         <mat-form-field color="accent" appearance="fill" class="full-width">
                             <mat-label>Diagnóstico Fisioterapêutico</mat-label>
-                            <textarea matInput [(ngModel)]="paciente.diagnosticoFisioterapeutico" name="diagnosticoFisioterapeutico"></textarea>
+                            <textarea matInput [(ngModel)]="paciente.diagnosticoFisioterapeutico" name="diagnosticoFisioterapeutico" disabled></textarea>
                         </mat-form-field>
                     </div>
                 </div>
             </form>
         </div>
-        <button mat-raised-button (click)="updatePaciente()" color="accent">
-            Atualizar
+        <button mat-raised-button (click)="deletePaciente()" color="warn">
+            Excluir
         </button>
         <button mat-raised-button (click)="cancel()" color="accent">
             Cancelar

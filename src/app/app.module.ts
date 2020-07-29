@@ -31,7 +31,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { PacienteUpdateComponent } from './components/paciente/paciente-update/paciente-update.component'; 
+import { PacienteUpdateComponent } from './components/paciente/paciente-update/paciente-update.component';
+import { PacienteDeleteComponent } from './components/paciente/paciente-delete/paciente-delete.component';
+import { LoginComponent } from './components/template/login/login.component'; 
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { PacienteUpdateComponent } from './components/paciente/paciente-update/p
     RedDirective,
     PacienteCreateComponent,
     PacienteReadComponent,
-    PacienteUpdateComponent
+    PacienteUpdateComponent,
+    PacienteDeleteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
